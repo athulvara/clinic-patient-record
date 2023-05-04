@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		.topbar {
+			background-color: #41D5EC;
+			color: #fff;
+			padding: 10px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.topbar a {
+			color: #000000;
+			text-decoration: none;
+			margin-left: 10px;
+		}
+
+		.topbar a:hover {
+			text-decoration: underline;
+		}
+
+		.logo {
+			font-size: 24px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body bgcolor="SlateGray">
+<!-- Topbar Start -->
+<div class="topbar">
+    <div class="logo"><h2>|  CPS CLINIC  |</h2></div>
+		<nav>
+			<a href="/"> | LOGIN | </a>
+		</nav>
+	</div>
+    <!-- Topbar End -->
+<br><br>
+<center><h2 style="background-color:#41D5EC;font:348%;padding:28px;color: #fff;"> L  O  G     I  N </h2>
+<br><br>
+<form action="register/" method="post">
+ {% csrf_token %}
+
+  <input type="text" name="username" placeholder="Enter your username"><br><br>
+  <input type="password" name="password" placeholder="Enter your password"><br><br>
+  <input type="submit"><br><br>
+
+</form>
+<br>
+<h3>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</h3>
+</center>
+</body>
+</html>

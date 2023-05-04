@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		.topbar {
+			background-color: #41D5EC;
+			color: #fff;
+			padding: 10px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.topbar a {
+			color: #000000;
+			text-decoration: none;
+			margin-left: 10px;
+		}
+
+		.topbar a:hover {
+			text-decoration: underline;
+		}
+
+		.logo {
+			font-size: 24px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+<!-- Topbar Start -->
+<div class="topbar">
+    <div class="logo"><h2>|  CPS CLINIC  |</h2></div>
+		<nav>
+			<a href="/list/">| PATIENT RECORD | </a>
+            <a href="/">| LOGOUT | </a>
+		</nav>
+	</div>
+    <!-- Topbar End -->
+
+<center>
+    <h2>PATIENT REGISTRATION</h2>
+    <br>
+        <h4 style="color:green;">
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+    </h4>
+    <br>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+</center>
+</body>
+</html>
